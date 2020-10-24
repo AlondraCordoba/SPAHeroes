@@ -1,0 +1,41 @@
+<div class="containerInfoH">
+
+    <div class="row ">
+        <h2 class="col-10"> {{hero.nombre}}
+            <small class="p-8">({{hero.aparicion}})</small></h2>
+        <div class="col-2">
+            <!--Boton que permitita regresar al compoonente heroes-->
+            <button class="btn btn-outline-warning btn-block" [routerLink]="['/heros']"> Regresar </button>
+        </div>
+    </div>
+
+    <hr>
+
+    <div class=" row ">
+        <div class="col-4 ">
+            <!--Primer forma
+            <img src="{{hero.img}}" class=" img-fluid" alt=" ">-->
+            <!--Segunda forma
+              Diciendole a Angular que el, es el que se tiene que encargar de las propiedades.
+              Esta forma aplica tambien con los otros atributos de HTML o en clases-->
+            <img [src]="hero.img" class=" img-fluid" alt=" ">
+        </div>
+
+        <div class="col-8">
+            <h3>Casa: <small> {{hero.casa}} </small> </h3>
+            <img class="casaL" src="./../../../assets/img/dc.jpeg" *ngIf="hero.casa == 'DC'">
+            <img class="casaL" src="./../../../assets/img/marvel.jpeg" *ngIf="hero.casa == 'Marvel'">
+            <hr>
+            <!--Parrafo que contendra el bio del heroe-->
+            <p>
+                {{hero.bio}}
+                <!--Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maiores corporis ipsam molestias corrupti delectus. Deserunt corporis quos ipsum minus magnam, error fugit quisquam, reiciendis iusto illum rem, labore sequi tenetur mollitia sint explicabo distinctio!
+            Nesciunt est sapiente porro, fuga dolorem veritatis totam obcaecati blanditiis repellendus laborum! Asperiores nobis possimus veniam ea dolore ex voluptates. Obcaecati et similique vero accusamus distinctio culpa nulla nisi perferendis minus,
+            omnis facilis aliquam odio possimus reiciendis quam harum at porro rerum error esse vel. Sapiente excepturi rem enim sequi sunt quibusdam, reprehenderit odit et iste, ut repellat exercitationem, assumenda est optio tempora itaque dignissimos
+            blanditiis! Dignissimos optio saepe, excepturi architecto accusantium voluptatibus. Commodi reprehenderit eum vel ad neque tempore, nisi ex at placeat sequi, non reiciendis? Quas nesciunt molestias odio delectus cumque blanditiis, explicabo
+            ipsum iusto, dolores facere asperiores corrupti tenetur ratione sit accusantium voluptatem quos eveniet quis in velit corporis laboriosam aliquid. Aliquid, eos quo? Dignissimos itaque inventore aliquid illum voluptates, laborum consequuntur
+            dolores animi illo nesciunt eum facilis ducimus tempore cupiditate tenetur nam incidunt velit ipsa? Beatae dolore ullam libero ad voluptates velit, cum incidunt commodi blanditiis at consectetur doloremque saepe, necessitatibus obcaecati voluptate,
+            dicta possimus suscipit a! In rerum eveniet praesentium aut.-->
+            </p>
+        </div>
+    </div>

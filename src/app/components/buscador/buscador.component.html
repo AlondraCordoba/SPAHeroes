@@ -1,0 +1,54 @@
+<!--<p>buscador works!</p>-->
+<div class="animated fadeIn">
+    <!--<h2 class="h2 display-4 pb-4">
+        Heroes <small> DC y Marvel</small>
+    </h2>-->
+    <h2 class="h2 display-4 pb-4">
+        Resultados para <small> {{strBusqueda}}</small>
+    </h2>
+
+    <!-- *ngIf = Funciona en torno de un valor booleano -->
+    <div *ngIf="Resultados.length === 0" class="alert alert-info animated fadeIn" role="alert">
+        No se encuentran resultados para el termino "<b>{{strBusqueda}}</b>"
+    </div>
+    <!--
+        IF
+    si      no
+    true    Else(false)
+    -->
+
+    <div class="card-columns">
+        <div class="card fadeIn animated shadow-sm p-3 mb-5 rounded" [ngClass]="{'border-primary': Hero.casa == 'DC', 'border-danger': Hero.casa == 'Marvel'}" *ngFor="let Hero of Resultados; let i = index">
+            <img src="{{Hero.img}}" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">{{Hero.nombre}}</h5>
+                <!--<h5 class="card-text">{{item.casa}}</h5>-->
+                <img class="casaL" src="./../../../assets/img/dc.jpeg" *ngIf="Hero.casa == 'DC'">
+                <img class="casaL" src="./../../../assets/img/marvel.jpeg" *ngIf="Hero.casa == 'Marvel'">
+                <hr>
+                <!--<p class="card-text">{{item.bio.substring(0,30)}}</p>-->
+                <p class="card-text">{{Hero.bio.substring(0,100)}}...</p>
+                <small>{{Hero.aparicion}}</small>
+            </div>
+            <!-- <button (click)="Navegar(i)" class="btn btn-outline-primary btn-block">Ver más...</button> -->
+        </div>
+    </div>
+</div>
+<!--
+        <div class="card-columns">
+        <div class="card fadeIn animated shadow-sm p-3 mb-5 rounded" *ngFor="let item of Resultados; let i = index">
+            <img src="{{item.img}}" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">{{item.nombre}}</h5>
+                <h5 class="card-text">{{item.casa}}</h5>
+                <img class="casaL" src="./../../../assets/img/dc.jpeg" *ngIf="item.casa == 'DC'">
+                <img class="casaL" src="./../../../assets/img/marvel.jpeg" *ngIf="item.casa == 'Marvel'">
+                <hr>
+                <p class="card-text">{{item.bio.substring(0,30)}}</p>
+                <p class="card-text">{{item.bio}}</p>
+                <small>{{item.aparicion}}</small>
+            </div>
+             <button (click)="Navegar(i)" class="btn btn-outline-primary btn-block">Ver más...</button> 
+        </div>
+    </div>
+-->
