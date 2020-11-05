@@ -19,6 +19,7 @@ export class HerosComponent implements OnInit {
     this.ArrayHeros = this.heroService.getHeros();
   }
 
+  // El componente padre ya tiene la informacion que el componente hijo necesita, sin necesidad de ejecutar otro servicio en el hijo.
   // Importado desde angular Router
   Navegar(index){
     console.log(index);

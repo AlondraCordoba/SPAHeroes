@@ -1,19 +1,20 @@
+<!--HEROS COMPONENT ES PADRE DE HERO-CARD COMPONENT-->
 <div class="fast fadeIn">
     <h2 class="h2 display-4 pb-4">
         Heroes <small> DC y Marvel</small>
     </h2>
-
-
     <div class="card-columns">
-        <div class="card fadeIn animated shadow-sm p-3 mb-5 rounded border" [ngClass]="{'border-primary': Hero.casa == 'DC', 'border-danger': Hero.casa == 'Marvel'}" *ngFor="let Hero of ArrayHeros; let i = index">
-            <img src="{{Hero.img}}" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">{{Hero.nombre}}</h5>
-                <h5 class="card-text">{{Hero.casa}}</h5>
-                <p class="card-text">{{Hero.bio.substring(0,30)}} ...</p>
-                <small>{{Hero.aparicion}}</small>
-            </div>
-            <button (click)="Navegar(i)" class="btn btn-outline-primary btn-block">Ver más...</button>
-        </div>
+        <!--La declaracion let i = index contabiliza cada emision del ngFor*-->
+        <!----------------------CODIGO DE LOS CARDS-------------------------->
+        <!--Directiva estructural-->
+        <!-- *ngFor="let Hero of ArrayHeros; let i = index"-->
+        <!-- HERO-CARD ES EL COMPONENTE HIJO DE HEROS COMPONENT-->
+        <!-- Hero es un objeto.-->
+        <!-- [Propiedad del padre que lo esta escribiendo]-->
+
+        <!--Llamar al codigo-->
+        <app-hero-card [PadreHero]="Hero" [Index]="i" *ngFor="let Hero of ArrayHeros; let i = index"></app-hero-card>
+        <!--Se comunicara el componente -->
+        <!--Se agrega el ngFor para generar tantas card como nuestro arreglo tenga.-->
     </div>
 </div>

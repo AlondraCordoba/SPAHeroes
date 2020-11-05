@@ -14,6 +14,11 @@ import { provideRoutes, RouterModule } from '@angular/router';
 import { Error404Component } from './components/error404/error404.component';
 import { HeroComponent } from './components/hero/hero.component';
 import { BuscadorComponent } from './components/buscador/buscador.component';
+import { HeroCardComponent } from './components/hero-card/hero-card.component';
+import { PipesComponent } from './components/pipes/pipes.component';
+import { CapitalizadoPipe } from './pipes/capitalizado/capitalizado.pipe';
+import { DomSeguroPipe } from './pipes/domseguro/dom-seguro.pipe';
+import { PasswordPipe } from './pipes/password/password.pipe';
 
 @NgModule({
   declarations: [
@@ -25,19 +30,25 @@ import { BuscadorComponent } from './components/buscador/buscador.component';
     AboutComponent,
     Error404Component,
     HeroComponent,
-    BuscadorComponent
-  ],
+    BuscadorComponent,
+    HeroCardComponent,
+    PipesComponent,
+    CapitalizadoPipe,
+    DomSeguroPipe,
+    PasswordPipe
+    ],
   imports: [
     BrowserModule,
     RouterModule.forRoot([
-      {path: "", component: HomeComponent},
+    {path: " ", component: HomeComponent},
     {path: 'home', component: HomeComponent},
     {path: 'heros', component: HerosComponent},
     {path: 'about', component: AboutComponent},
+    {path: 'pipes', component: PipesComponent},
     {path: 'hero/:id', component: HeroComponent},
     {path: 'results/:termino', component: BuscadorComponent},
-    {path: '**', component: Error404Component} 
-    // {path: '**', pathMatch: 'full', component: Error404Component} 
+    {path: '**', component: Error404Component}
+    // {path: '**', pathMatch: 'full', component: Error404Component}
     ])
   ],
   providers: [],

@@ -83,9 +83,13 @@ public searchHeros(termino){
   // Tomar el termino que se tiene y lo que se tiene de "DATA"
   // CICLO para comprar el termino de busqueda contra la propiedad nombre de cada heroe.
   // hero es un objeto.
-  for ( const hero of this.Heros ){
+  // Se modificara el for of
+  for ( let i = 0; i < this.Heros.length; i++ ){
+    let hero = this.Heros[i]
     const nombre = hero.nombre.toLowerCase();
     if (nombre.indexOf(termino) >= 0){
+      // Se agregara una nueva propiedad
+      hero.index = i;
     // Regresa la posicion de la cadena chica tiene con la mas grande, del termino que se busco, en caso de que no lo encuentre regresa -1.
     resultados.push(hero);
   }

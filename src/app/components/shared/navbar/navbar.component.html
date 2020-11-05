@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-light border border-success bg-secondary sticky-top">
-    <a class="navbar-brand" href="#"><img class="img-logo" src="../../../../assets/img/A-64.png" alt=""></a>
+    <a class="navbar-brand" [routerLink]="['/home']"><img class="img-logo" src="../../../../assets/img/A-64.png" alt=""></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -14,14 +14,17 @@
                 <a class="nav-link font-weight-bold" [routerLink]="['heros']">Heroes</a>
             </li>
 
-
             <li class="nav-item">
                 <a class="nav-link font-weight-bold" [routerLink]="['about']">About</a>
             </li>
+
+            <li class="nav-item">
+                <a class="nav-link font-weight-bold" [routerLink]="['pipes']">Extra Pipes</a>
+            </li>
         </ul>
 
-        <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" #valorBuscar type="search" placeholder="Search" aria-label="Search">
+        <form (submit)="$event.preventDefault()" class="form-inline my-2 my-lg-0">
+            <input (keyup.enter)="Search(valorBuscar.value)" class="form-control mr-sm-2" #valorBuscar type="search" placeholder="Search" aria-label="Search">
             <button (click)="Search(valorBuscar.value)" class="btn btn-success my-2 my-sm-0" type="button">Search</button>
         </form>
     </div>
