@@ -10,7 +10,7 @@
         <!-- *ngFor="let Hero of ArrayHeros; let i = index"-->
         <!-- HERO-CARD ES EL COMPONENTE HIJO DE HEROS COMPONENT-->
         <!-- Hero es un objeto.-->
-        <!-- [Propiedad del padre que lo esta escribiendo]-->
+        <!-- [Propiedad del componente hijo que va a recibir la informacion que el padre provee.] = "Nombre de la propiedad Componente padre"-->
 
         <!--Llamar al codigo-->
         <app-hero-card [PadreHero]="Hero" [Index]="i" *ngFor="let Hero of ArrayHeros; let i = index"></app-hero-card>
